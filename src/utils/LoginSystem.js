@@ -9,6 +9,8 @@ export const handleSignInWithGoogle = () => {
     const providerGoogle = new GoogleAuthProvider();
     signInWithPopup(auth, providerGoogle)
         .then((result) => {
+            console.log('result');
+            console.log(result);
             const credential = GoogleAuthProvider.credentialFromResult(result);
             if (credential) {
                 const userAvatar = result.user.photoURL
@@ -26,7 +28,11 @@ export const handleSignInWithFacebook = () => {
     const providerFacebook = new FacebookAuthProvider();
     signInWithPopup(auth, providerFacebook)
         .then((result) => {
-            const credential = FacebookAuthProvider.credentialFromResult(result);
+            console.log('result');
+            console.log(result);
+            const credential = FacebookAuthProvider.credentialFromResult(result);            
+            console.log('credential');
+            console.log(credential);
             if (credential) {
                 const userAvatar = result.user.photoURL
                 const userName = result.user.displayName
@@ -43,7 +49,11 @@ export const handleSignInWithGitHub = () => {
     const providerGitHub = new GithubAuthProvider();
     signInWithPopup(auth, providerGitHub)
         .then((result) => {
+            console.log('result');
+            console.log(result);
             const credential = GithubAuthProvider.credentialFromResult(result);
+            console.log('credential');
+            console.log(credential);
             if (credential) {
                 //TODO: Determinar datos para usar
                 navigate("/home");
@@ -57,7 +67,11 @@ export const handleSignInWithTwitter = () => {
     const providerTwitter = new TwitterAuthProvider();
     signInWithPopup(auth, providerTwitter)
         .then((result) => {
+            console.log('result');
+            console.log(result);
             const credential = TwitterAuthProvider.credentialFromResult(result);
+            console.log('credential');
+            console.log(credential);
             if (credential) {
                //TODO: Determinar datos para usar
                navigate("/home");
